@@ -1,0 +1,17 @@
+name: Trigger Repo B Automation
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Repo B via API
+        run: |
+          curl -X POST https://api.github.com/repos/naveenf22labs/frank-darling-automation/dispatches \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: token ${{ secrets.TRIGGER_PAT }}" \
+          -d '{"event_type":"run-automation"}'
