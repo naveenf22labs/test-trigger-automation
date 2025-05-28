@@ -1,0 +1,3 @@
+[submodule "frank-darling-automation"]
+	path = frank-darling-automation
+	url = https://github.com/naveenf22labs/frank-darling-automation.git
